@@ -1,0 +1,238 @@
+{
+  "lang": "en",
+  "htmlLang": "en",
+  "ogLocale": "en_US",
+  "path": "en/",
+  "label": "EN",
+  "name": "English",
+  "brandTagline": "Business & Personal Fixer",
+  "languageNames": { "sr": "Serbian", "en": "English", "ru": "Russian" },
+  "areas": ["Novi Sad", "Vojvodina", "Belgrade"],
+  "paymentAccepted": "Cash, bank transfer",
+
+  "meta": {
+    "title": "Resolvo — Business & Personal Fixer | Novi Sad",
+    "description": "Dedicated personal and business support in Novi Sad. Resolvo handles tasks, coordinates solutions and solves everyday challenges so you can focus on what matters most."
+  },
+
+  "ui": {
+    "skip": "Skip to content",
+    "menu": "Menu",
+    "close": "Close menu",
+    "language": "Language",
+    "backToTop": "Back to top",
+    "home": "Resolvo — home",
+    "navPrimary": "Main navigation",
+    "navMobile": "Navigation"
+  },
+
+  "nav": {
+    "services": "Services",
+    "approach": "Approach",
+    "process": "How it works",
+    "plans": "Plans",
+    "faq": "FAQ",
+    "contact": "Contact",
+    "cta": "Get in touch"
+  },
+
+  "hero": {
+    "badge": "Accepting a limited number of clients",
+    "title": "Consider it <em>resolved.</em>",
+    "lead": "Dedicated personal and business support — we handle tasks, coordinate solutions and solve everyday challenges. Your time stays yours.",
+    "cta1": "Book a consultation",
+    "cta2": "View plans",
+    "area": "Novi Sad · Vojvodina · Belgrade"
+  },
+
+
+  "services": {
+    "eyebrow": "Services",
+    "title": "Everything that demands your time. <em>Handled.</em>",
+    "lead": "Five areas, one trusted point of contact. Every engagement is tailored to the client — no templates, no standardised solutions.",
+    "items": [
+      {
+        "title": "Business Support",
+        "text": "Business administration, meeting organisation, communication with partners and associates, and operational support.",
+        "ui": ["Meeting confirmed", "10:00", "Contract sent to partner", "Invoice filed"]
+      },
+      {
+        "title": "Logistics & Errands",
+        "text": "Field tasks, purchasing, pickups, deliveries and end-to-end logistics coordination.",
+        "ui": ["Pickup", "Delivery", "On the way", "ETA 14:20"]
+      },
+      {
+        "title": "Personal & Lifestyle",
+        "text": "Private obligations, reservations, appointments and coordination of everyday activities.",
+        "ui": ["Table for two", "20:30", "Confirmed", "Dentist · Thu 09:00"]
+      },
+      {
+        "title": "Research & Sourcing",
+        "text": "Finding products, services and suppliers — and the most favourable solution among them.",
+        "ui": ["Best offer for…", "3 suppliers compared", "Best price found", "Shortlist ready"]
+      },
+      {
+        "title": "Special Projects",
+        "text": "Organisation and coordination of more complex, one-of-a-kind projects — from first idea to final detail.",
+        "ui": ["Project", "Venue", "Suppliers", "Schedule"]
+      }
+    ]
+  },
+
+  "approach": {
+    "eyebrow": "Our approach",
+    "title": "One trusted contact. <em>Countless solutions.</em>",
+    "text": "Resolvo is built around personal attention, reliability, discretion, flexibility and accountability. Rather than serving many clients with standardised solutions, we build long-term relationships with a select few — ensuring a high level of dedication and responsiveness.",
+    "values": ["Personal attention", "Reliability", "Discretion", "Flexibility", "Accountability"],
+    "stats": [
+      { "value": "1", "label": "trusted point of contact" },
+      { "value": "24/7", "label": "on retainer" },
+      { "value": "ASAP", "label": "response time" },
+      { "value": "100%", "label": "discretion" }
+    ]
+  },
+
+  "quote": {
+    "text": "I know a guy who knows a guy. I know everything. <em>It’s not on you to know.</em>",
+    "sub": "Many requests don’t fit on any list of services. That’s the point."
+  },
+
+  "process": {
+    "eyebrow": "How it works",
+    "title": "From first conversation to <em>peace of mind.</em>",
+    "steps": [
+      { "title": "Get in touch", "text": "Call, message or write — whichever suits you. We respond as soon as possible." },
+      { "title": "We listen", "text": "We begin by understanding your needs, priorities and expectations." },
+      { "title": "Your plan", "text": "We recommend a personalised package with transparent pricing and a clearly defined scope of responsibilities." },
+      { "title": "You delegate", "text": "From then on you hand over responsibility, not just tasks — to a single trusted point of contact." }
+    ]
+  },
+
+  "clients": {
+    "eyebrow": "Who it’s for",
+    "title": "For those who know time is <em>the scarcest resource.</em>",
+    "items": [
+      { "title": "Individuals", "text": "People with many responsibilities and a high degree of accountability, day after day. They understand that delegating to a reliable professional is not a luxury, but a practical investment in efficiency, convenience and peace of mind." },
+      { "title": "Businesses", "text": "Companies that need dependable, flexible support in managing operational tasks, coordinating logistics, solving problems and handling responsibilities outside their core activities." }
+    ],
+    "area": "Primarily Novi Sad — with service extending across Vojvodina and to Belgrade."
+  },
+
+  "plans": {
+    "eyebrow": "Plans",
+    "title": "A monthly partnership, <em>not a one-off favour.</em>",
+    "lead": "Our services are designed around ongoing partnerships, with transparent pricing and a clearly defined scope. Payment by bank transfer or in cash.",
+    "from": "from",
+    "perMonth": "/ month",
+    "note": "Prices are monthly. The final scope is agreed during an initial consultation.",
+    "items": [
+      {
+        "id": "priority",
+        "name": "Resolvo Priority",
+        "price": "€790",
+        "tag": "07:00–19:00",
+        "desc": "Dedicated support throughout the day.",
+        "features": ["Available 07:00–19:00", "All five service areas", "One dedicated point of contact", "Clearly defined monthly scope"],
+        "cta": "Request a call"
+      },
+      {
+        "id": "signature",
+        "name": "Resolvo Signature",
+        "price": "€1,590",
+        "tag": "24/7",
+        "desc": "On retainer, day and night.",
+        "features": ["On retainer 24/7", "All five service areas", "Urgent and after-hours requests", "One dedicated point of contact"],
+        "cta": "Request a call",
+        "featured": true
+      },
+      {
+        "id": "bespoke",
+        "name": "Resolvo Bespoke",
+        "price": "By arrangement",
+        "tag": "Made to measure",
+        "desc": "Shaped entirely around you.",
+        "features": ["Scope and availability made to measure", "Special projects and complex coordination", "Terms agreed in a personal consultation"],
+        "cta": "Let’s talk"
+      }
+    ]
+  },
+
+  "about": {
+    "eyebrow": "About",
+    "title": "Why <em>Resolvo</em>",
+    "paragraphs": [
+      "I started Resolvo because I recognised a growing need for reliable, personalised assistance in an increasingly demanding world. People and businesses often have more responsibilities than time to manage them well.",
+      "My goal was to create a service that takes those responsibilities off their shoulders, solves problems efficiently, and gives clients back their most valuable resource: time.",
+      "Clients don’t just delegate tasks — they delegate responsibility, knowing their needs will be handled with professionalism and care."
+    ],
+    "name": "Nikola Rajić",
+    "role": "Founder, Resolvo"
+  },
+
+  "faq": {
+    "eyebrow": "FAQ",
+    "title": "Your questions, <em>answered.</em>",
+    "lead": "Didn’t find what you were looking for? Get in touch — we respond as soon as possible.",
+    "cta": "Ask a question",
+    "items": [
+      { "q": "What exactly can Resolvo help me with?", "a": "Resolvo handles a wide range of personal and business responsibilities, including organising appointments, coordinating logistics, managing errands, researching solutions, communicating with service providers, and overseeing everyday tasks or special projects. If something requires your time, attention or coordination, there’s a good chance we can take care of it." },
+      { "q": "How does your service work, and how much does it cost?", "a": "We begin by understanding your needs, priorities and expectations. Based on these, we recommend a personalised service package that provides the appropriate level of support. Our services are primarily designed around ongoing partnerships, with transparent pricing and a clearly defined scope of responsibilities. Plans start at €790 per month." },
+      { "q": "Why should I trust Resolvo with my personal or business responsibilities?", "a": "Trust, discretion and accountability are at the core of Resolvo. We deliberately work with a limited number of clients to ensure dedicated attention, direct communication and consistent service quality. Our goal isn’t simply to complete individual tasks, but to become a dependable partner you can confidently delegate responsibilities to." },
+      { "q": "Do you take urgent or after-hours requests?", "a": "Yes. With Resolvo Signature we are on retainer 24/7, and urgent requests are always taken seriously." },
+      { "q": "Which area do you cover?", "a": "Primarily Novi Sad. By arrangement, service extends to the rest of Vojvodina and to Belgrade." },
+      { "q": "What if what I need isn’t on your list?", "a": "Ask anyway. If we don’t do it ourselves, we know someone who does — or someone who knows someone." },
+      { "q": "How do I pay?", "a": "Monthly, by bank transfer or in cash." }
+    ]
+  },
+
+  "contact": {
+    "eyebrow": "Contact",
+    "title": "Let’s take something <em>off your mind.</em>",
+    "lead": "Tell us briefly what you need. We respond as soon as possible — including urgent and after-hours requests.",
+    "live": {
+      "city": "Novi Sad",
+      "status": "on call",
+      "morning": "Good morning.",
+      "day": "Good afternoon.",
+      "evening": "Good evening."
+    },
+    "channels": {
+      "phone": "Call",
+      "whatsapp": "WhatsApp",
+      "viber": "Viber",
+      "email": "Email"
+    },
+    "form": {
+      "title": "Send a short brief",
+      "name": "Name",
+      "contact": "Phone or email",
+      "plan": "I’m interested in",
+      "planUnsure": "Not sure yet",
+      "message": "Message",
+      "messagePlaceholder": "What can we take off your plate?",
+      "sendWhatsapp": "Send via WhatsApp",
+      "sendEmail": "Send via email",
+      "note": "The form opens WhatsApp or your email app with your message ready to send. Nothing is stored on this website.",
+      "required": "Please enter your name and a short message."
+    },
+    "msg": {
+      "subject": "Enquiry from the website",
+      "greeting": "Hello, my name is",
+      "interest": "Interested in",
+      "contact": "Contact"
+    }
+  },
+
+  "footer": {
+    "tagline": "Dedicated support for individuals and companies in Novi Sad and beyond.",
+    "navTitle": "Navigate",
+    "contactTitle": "Contact",
+    "companyTitle": "Company",
+    "pib": "Tax ID",
+    "mb": "Company No.",
+    "address": ["Veselina Masleše 40", "21000 Novi Sad"],
+    "rights": "All rights reserved."
+  },
+
+  "mobileBar": { "call": "Call", "whatsapp": "WhatsApp" }
+}

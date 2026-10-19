@@ -1,0 +1,238 @@
+{
+  "lang": "sr",
+  "htmlLang": "sr-Latn",
+  "ogLocale": "sr_RS",
+  "path": "",
+  "label": "SR",
+  "name": "Srpski",
+  "brandTagline": "Poslovna i lična podrška",
+  "languageNames": { "sr": "Srpski", "en": "Engleski", "ru": "Ruski" },
+  "areas": ["Novi Sad", "Vojvodina", "Beograd"],
+  "paymentAccepted": "Gotovina, uplata na račun",
+
+  "meta": {
+    "title": "Resolvo — poslovna i lična podrška | Novi Sad",
+    "description": "Posvećena lična i poslovna podrška u Novom Sadu. Resolvo preuzima zadatke, koordinira rešenja i rešava svakodnevne izazove, kako biste se vi posvetili onome što je zaista važno."
+  },
+
+  "ui": {
+    "skip": "Pređi na sadržaj",
+    "menu": "Meni",
+    "close": "Zatvori meni",
+    "language": "Jezik",
+    "backToTop": "Na vrh",
+    "home": "Resolvo — početna",
+    "navPrimary": "Glavna navigacija",
+    "navMobile": "Navigacija"
+  },
+
+  "nav": {
+    "services": "Usluge",
+    "approach": "Pristup",
+    "process": "Kako radimo",
+    "plans": "Paketi",
+    "faq": "Pitanja",
+    "contact": "Kontakt",
+    "cta": "Javite se"
+  },
+
+  "hero": {
+    "badge": "Primamo ograničen broj klijenata",
+    "title": "Smatrajte da je <em>rešeno.</em>",
+    "lead": "Posvećena lična i poslovna podrška — preuzimamo zadatke, koordiniramo rešenja i rešavamo svakodnevne izazove. Vaše vreme ostaje vaše.",
+    "cta1": "Zakažite razgovor",
+    "cta2": "Pogledajte pakete",
+    "area": "Novi Sad · Vojvodina · Beograd"
+  },
+
+
+  "services": {
+    "eyebrow": "Usluge",
+    "title": "Sve što zahteva vaše vreme. <em>Rešeno.</em>",
+    "lead": "Pet oblasti, jedna osoba od poverenja. Svaki angažman krojen je prema potrebama klijenta — bez šablona i standardizovanih rešenja.",
+    "items": [
+      {
+        "title": "Poslovna podrška",
+        "text": "Poslovna administracija, organizacija sastanaka, komunikacija sa saradnicima i operativna podrška.",
+        "ui": ["Sastanak potvrđen", "10:00", "Ugovor poslat partneru", "Faktura evidentirana"]
+      },
+      {
+        "title": "Logistika i teren",
+        "text": "Terenski zadaci, nabavke, preuzimanja, isporuke i organizacija logistike.",
+        "ui": ["Preuzimanje", "Isporuka", "U toku", "Stiže u 14:20"]
+      },
+      {
+        "title": "Lične obaveze",
+        "text": "Privatne obaveze, rezervacije, zakazivanja i koordinacija svakodnevnih aktivnosti.",
+        "ui": ["Sto za dvoje", "20:30", "Potvrđeno", "Stomatolog · čet 09:00"]
+      },
+      {
+        "title": "Istraživanje i izbor",
+        "text": "Pronalaženje proizvoda, usluga, dobavljača i najpovoljnijih rešenja.",
+        "ui": ["Najbolja ponuda za…", "3 dobavljača upoređena", "Najpovoljnija cena pronađena", "Uži izbor spreman"]
+      },
+      {
+        "title": "Posebni projekti",
+        "text": "Organizacija i koordinacija složenijih, individualnih projekata — od prve ideje do poslednjeg detalja.",
+        "ui": ["Projekat", "Lokacija", "Dobavljači", "Raspored"]
+      }
+    ]
+  },
+
+  "approach": {
+    "eyebrow": "Pristup",
+    "title": "Jedna osoba od poverenja. <em>Bezbroj rešenja.</em>",
+    "text": "Resolvo počiva na ličnoj pažnji, pouzdanosti, diskreciji, fleksibilnosti i odgovornosti. Umesto da opslužujemo veliki broj klijenata standardizovanim rešenjima, gradimo dugoročne odnose sa pažljivo odabranim krugom klijenata — uz visok nivo posvećenosti i brzine reagovanja.",
+    "values": ["Lična pažnja", "Pouzdanost", "Diskrecija", "Fleksibilnost", "Odgovornost"],
+    "stats": [
+      { "value": "1", "label": "osoba od poverenja" },
+      { "value": "24/7", "label": "na raspolaganju" },
+      { "value": "Odmah", "label": "brzina reakcije" },
+      { "value": "100%", "label": "diskrecija" }
+    ]
+  },
+
+  "quote": {
+    "text": "Znam čoveka koji zna čoveka. Znam sve. <em>Nije na vama da znate.</em>",
+    "sub": "Mnogi zahtevi ne staju ni na jedan spisak usluga. U tome je poenta."
+  },
+
+  "process": {
+    "eyebrow": "Kako radimo",
+    "title": "Od prvog razgovora do <em>mirne glave.</em>",
+    "steps": [
+      { "title": "Javite se", "text": "Pozovite, pošaljite poruku ili pišite — kako vama odgovara. Odgovaramo u najkraćem roku." },
+      { "title": "Slušamo", "text": "Počinjemo razumevanjem vaših potreba, prioriteta i očekivanja." },
+      { "title": "Vaš plan", "text": "Predlažemo personalizovani paket, uz transparentne cene i jasno definisan obim odgovornosti." },
+      { "title": "Vi delegirate", "text": "Od tog trenutka ne prepuštate samo zadatke, već i odgovornost — jednoj osobi od poverenja." }
+    ]
+  },
+
+  "clients": {
+    "eyebrow": "Kome je namenjeno",
+    "title": "Za one koji znaju da je vreme <em>najdragoceniji resurs.</em>",
+    "items": [
+      { "title": "Pojedinci", "text": "Ljudi sa mnogo obaveza i visokim stepenom odgovornosti, iz dana u dan. Razumeju da delegiranje zadataka pouzdanom profesionalcu nije luksuz, već praktična investicija u efikasnost, udobnost i mir." },
+      { "title": "Kompanije", "text": "Firme kojima je potrebna pouzdana i fleksibilna podrška u operativnim zadacima, koordinaciji logistike, rešavanju problema i obavezama van osnovne delatnosti." }
+    ],
+    "area": "Primarno Novi Sad — uz mogućnost proširenja na Vojvodinu i Beograd."
+  },
+
+  "plans": {
+    "eyebrow": "Paketi",
+    "title": "Mesečno partnerstvo, <em>ne jednokratna usluga.</em>",
+    "lead": "Naše usluge zamišljene su kao dugoročna saradnja, uz transparentne cene i jasno definisan obim. Plaćanje gotovinom ili uplatom na račun.",
+    "from": "od",
+    "perMonth": "/ mesečno",
+    "note": "Cene su mesečne. Konačan obim usluga dogovaramo na uvodnom razgovoru.",
+    "items": [
+      {
+        "id": "priority",
+        "name": "Resolvo Prioritet",
+        "price": "790 €",
+        "tag": "07:00–19:00",
+        "desc": "Posvećena podrška tokom celog dana.",
+        "features": ["Dostupnost 07:00–19:00", "Svih pet oblasti usluga", "Jedna osoba za kontakt", "Jasno definisan mesečni obim"],
+        "cta": "Zatražite razgovor"
+      },
+      {
+        "id": "signature",
+        "name": "Resolvo Ekskluziv",
+        "price": "1.590 €",
+        "tag": "24/7",
+        "desc": "Na raspolaganju, danju i noću.",
+        "features": ["Stalna dostupnost 24/7", "Svih pet oblasti usluga", "Hitni zahtevi i van radnog vremena", "Jedna osoba za kontakt"],
+        "cta": "Zatražite razgovor",
+        "featured": true
+      },
+      {
+        "id": "bespoke",
+        "name": "Resolvo Po meri",
+        "price": "Po dogovoru",
+        "tag": "Individualno",
+        "desc": "U potpunosti prilagođeno vama.",
+        "features": ["Obim i dostupnost po meri", "Posebni projekti i složena koordinacija", "Uslovi kroz lični razgovor"],
+        "cta": "Razgovarajmo"
+      }
+    ]
+  },
+
+  "about": {
+    "eyebrow": "O nama",
+    "title": "Zašto <em>Resolvo</em>",
+    "paragraphs": [
+      "Resolvo sam pokrenuo jer sam prepoznao rastuću potrebu za pouzdanom, personalizovanom pomoći u svetu koji je sve zahtevniji. Ljudi i kompanije često imaju više obaveza nego vremena da ih kvalitetno ispune.",
+      "Moj cilj je bio da stvorim uslugu koja preuzima te obaveze sa njihovih leđa, efikasno rešava probleme i klijentima vraća ono najdragocenije — vreme.",
+      "Klijenti ne prepuštaju samo zadatke — prepuštaju odgovornost, sa sigurnošću da će njihove potrebe biti ispunjene profesionalno i s pažnjom."
+    ],
+    "name": "Nikola Rajić",
+    "role": "Osnivač, Resolvo"
+  },
+
+  "faq": {
+    "eyebrow": "Pitanja",
+    "title": "Vaša pitanja, <em>naši odgovori.</em>",
+    "lead": "Niste pronašli odgovor? Javite se — odgovaramo u najkraćem roku.",
+    "cta": "Postavite pitanje",
+    "items": [
+      { "q": "Sa čime tačno Resolvo može da mi pomogne?", "a": "Resolvo preuzima širok spektar ličnih i poslovnih obaveza — organizaciju sastanaka i termina, koordinaciju logistike, obavljanje zadataka na terenu, istraživanje rešenja, komunikaciju sa pružaocima usluga, kao i vođenje svakodnevnih obaveza i posebnih projekata. Ako nešto zahteva vaše vreme, pažnju ili koordinaciju, velika je verovatnoća da to možemo da preuzmemo." },
+      { "q": "Kako funkcioniše saradnja i koliko košta?", "a": "Počinjemo razumevanjem vaših potreba, prioriteta i očekivanja. Na osnovu toga predlažemo personalizovani paket sa odgovarajućim nivoom podrške. Usluge su prvenstveno zamišljene kao dugoročno partnerstvo, uz transparentne cene i jasno definisan obim odgovornosti. Paketi počinju od 790 € mesečno." },
+      { "q": "Zašto da Resolvu poverim svoje lične ili poslovne obaveze?", "a": "Poverenje, diskrecija i odgovornost su u samoj srži Resolva. Namerno radimo sa ograničenim brojem klijenata kako bismo obezbedili punu posvećenost, direktnu komunikaciju i dosledan kvalitet usluge. Naš cilj nije samo da obavimo pojedinačne zadatke, već da postanemo pouzdan partner kome s punim poverenjem prepuštate odgovornost." },
+      { "q": "Da li preuzimate hitne zadatke i zadatke van radnog vremena?", "a": "Da. Uz paket Resolvo Ekskluziv na raspolaganju smo 24/7, a hitne zahteve uvek shvatamo ozbiljno." },
+      { "q": "Koje područje pokrivate?", "a": "Primarno Novi Sad. Po dogovoru, usluge proširujemo na ostatak Vojvodine i na Beograd." },
+      { "q": "Šta ako nešto nije na vašem spisku usluga?", "a": "Pitajte svejedno. Ako nešto ne radimo sami, znamo nekoga ko radi — ili nekoga ko zna nekoga." },
+      { "q": "Kako se plaća?", "a": "Mesečno, gotovinom ili uplatom na račun." }
+    ]
+  },
+
+  "contact": {
+    "eyebrow": "Kontakt",
+    "title": "Hajde da vam skinemo nešto <em>s glave.</em>",
+    "lead": "Ukratko nam opišite šta vam je potrebno. Odgovaramo u najkraćem roku — i na hitne zahteve van radnog vremena.",
+    "live": {
+      "city": "Novi Sad",
+      "status": "na vezi",
+      "morning": "Dobro jutro.",
+      "day": "Dobar dan.",
+      "evening": "Dobro veče."
+    },
+    "channels": {
+      "phone": "Pozovite",
+      "whatsapp": "WhatsApp",
+      "viber": "Viber",
+      "email": "E-pošta"
+    },
+    "form": {
+      "title": "Pošaljite kratak upit",
+      "name": "Ime i prezime",
+      "contact": "Telefon ili e-pošta",
+      "plan": "Zanima me",
+      "planUnsure": "Još ne znam",
+      "message": "Poruka",
+      "messagePlaceholder": "Šta možemo da preuzmemo umesto vas?",
+      "sendWhatsapp": "Pošalji preko WhatsApp-a",
+      "sendEmail": "Pošalji e-poštom",
+      "note": "Forma otvara WhatsApp ili vaš program za e-poštu sa pripremljenom porukom. Ovaj sajt ne čuva nikakve podatke.",
+      "required": "Unesite ime i kratku poruku."
+    },
+    "msg": {
+      "subject": "Upit sa sajta",
+      "greeting": "Zdravo, ja sam",
+      "interest": "Zanima me",
+      "contact": "Kontakt"
+    }
+  },
+
+  "footer": {
+    "tagline": "Posvećena podrška za pojedince i kompanije u Novom Sadu i šire.",
+    "navTitle": "Navigacija",
+    "contactTitle": "Kontakt",
+    "companyTitle": "Firma",
+    "pib": "PIB",
+    "mb": "MB",
+    "address": ["Veselina Masleše 40", "21000 Novi Sad"],
+    "rights": "Sva prava zadržana."
+  },
+
+  "mobileBar": { "call": "Pozovite", "whatsapp": "WhatsApp" }
+}

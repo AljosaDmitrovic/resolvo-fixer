@@ -1,0 +1,18 @@
+{
+  "url": "https://resolvosolutions.com/",
+  "brand": "Resolvo",
+  "phone": "+381603255353",
+  "phoneDisplay": "+381 60 325 53 53",
+  "whatsapp": "381603255353",
+  "email": "fixer@resolvosolutions.com",
+  "street": "Veselina Masleše 40",
+  "city": "Novi Sad",
+  "postalCode": "21000",
+  "country": "RS",
+  "legalName": "NIKOLA RAJIĆ PREDUZETNIK USLUGE PODRŠKE POSLOVANJU RESOLVO BUSINESS & PERSONAL FIXER NOVI SAD",
+  "pib": "116019187",
+  "mb": "68831555",
+  "prices": { "priority": 790, "signature": 1590 },
+  "languages": ["sr", "en", "ru"],
+  "defaultLanguage": "sr"
+}
