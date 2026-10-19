@@ -185,7 +185,8 @@ body::after {
 }
 .display em,
 .h2 em,
-.quote__text em {
+.quote__text em,
+.form__done-head em {
   font-family: var(--font-serif);
   font-style: italic;
   font-weight: 400;
@@ -874,7 +875,18 @@ body::after {
   font-weight: 500;
   letter-spacing: -0.04em;
   font-variant-numeric: tabular-nums;
+  text-align: right;
 }
+.ticket__day {
+  display: block;
+  margin-bottom: 4px;
+  color: var(--dim);
+  font-size: 0.6rem;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+.ticket__day[hidden] { display: none; }
 .ticket__rule { height: 0; margin: 12px 0; border-top: 1px dashed var(--line-2); }
 .ticket__status { display: flex; align-items: center; gap: 10px; font-size: 0.85rem; }
 
@@ -1094,12 +1106,33 @@ body::after {
 }
 .quote__inner { max-width: 980px; margin-inline: auto; }
 .quote__star {
+  position: relative;
   width: 72px;
   height: 72px;
   margin: 0 auto 36px;
   animation: spin 40s linear infinite;
 }
 .quote__star svg { width: 100%; height: 100%; overflow: visible; }
+/* The star glints once when the last word of the quote lights up (main.js adds .is-lit) */
+.quote__star::before {
+  content: "";
+  position: absolute;
+  inset: -70%;
+  z-index: -1;
+  border-radius: 50%;
+  background: radial-gradient(closest-side, rgba(255, 255, 255, 0.4), transparent);
+  opacity: 0;
+  transform: scale(0.4);
+}
+.is-lit .quote__star::before { animation: flare 1.6s var(--ease) both; }
+.is-lit .quote__star svg { animation: glint 1.6s var(--ease) both; }
+@keyframes flare {
+  30% { opacity: 1; transform: scale(1); }
+  to { opacity: 0; transform: scale(1.3); }
+}
+@keyframes glint {
+  30% { filter: brightness(1.8) drop-shadow(0 0 16px rgba(255, 255, 255, 0.6)); transform: scale(1.12); }
+}
 .quote__text {
   font-size: clamp(2rem, 1.2rem + 3.6vw, 4rem);
   font-weight: 500;
@@ -1112,7 +1145,7 @@ body::after {
 /* Words light up one by one as the quote scrolls toward the middle of the screen.
    main.js drives --lit from 0 to 1; without it every word stays lit. */
 .quote__text .w {
-  color: rgb(5 5 5 / calc(0.7 - 0.7 * clamp(0, (var(--lit, 1) * (var(--n) + 2) - var(--i)) / 2, 1)));
+  color: rgb(5 5 5 / calc(0.7 - 0.7 * clamp(0, (var(--lit, 1) * (var(--n) + 1) - var(--i)) / 2, 1)));
   transition: color 0.3s linear;
 }
 .quote__sub {
@@ -1126,9 +1159,12 @@ body::after {
 /* ---------- Process ---------- */
 
 .steps { display: grid; gap: 16px; }
+/* main.js drives --p on .steps from 0 to 1 while scrolling; each step lights its share (--f).
+   Without it every step is fully lit. */
 .step {
+  --f: clamp(0, var(--p, 1) * var(--n, 4) - var(--i, 0), 1);
   padding: 28px;
-  border: 1px solid var(--line);
+  border: 1px solid rgb(255 255 255 / calc(0.08 + 0.08 * min(1, var(--f) * 4)));
   border-radius: 22px;
   background: var(--surface);
 }
@@ -1143,16 +1179,17 @@ body::after {
   background-clip: text;
   color: transparent;
   padding-right: 0.08em;
+  opacity: calc(0.25 + 0.75 * min(1, var(--f) * 4));
+  transition: opacity 0.3s linear;
 }
 .step__line {
   flex: 1;
   height: 1px;
-  background: linear-gradient(90deg, rgba(255, 255, 255, 0.4), transparent);
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0.5), transparent);
   transform-origin: left;
-  transform: scaleX(0);
-  transition: transform 1.6s var(--ease) 0.3s;
+  transform: scaleX(var(--f));
+  transition: transform 0.3s linear;
 }
-.is-in .step__line, html:not(.js) .step__line { transform: scaleX(1); }
 .step h3 { font-size: 1.2rem; font-weight: 500; letter-spacing: -0.02em; }
 .step p { margin-top: 10px; color: var(--muted); font-size: 0.96rem; line-height: 1.65; }
 
@@ -1200,7 +1237,7 @@ body::after {
   z-index: -1;
   background: radial-gradient(40% 40% at 50% 50%, rgba(255, 255, 255, 0.06), transparent 70%);
 }
-.plans { display: grid; gap: 16px; align-items: stretch; }
+.plans { display: grid; gap: 16px; align-items: stretch; perspective: 1400px; }
 .plan {
   display: flex;
   flex-direction: column;
@@ -1276,6 +1313,7 @@ body::after {
 
 .plan--featured {
   position: relative;
+  isolation: isolate;
   border-color: transparent;
   background: linear-gradient(170deg, #ffffff 0%, #f0f0f2 55%, #d9d9de 100%);
   color: var(--ink);
@@ -1287,6 +1325,34 @@ body::after {
 .plan--featured .plan__desc { color: #52525b; }
 .plan--featured .plan__features { border-top-color: rgba(0, 0, 0, 0.1); }
 .plan--featured .plan__features .i { background: #000; color: #fff; }
+
+/* Metal card: a glint sweeps across once as it appears; on desktop it tilts toward the
+   pointer (main.js sets rotate) and a glare follows it. Both sit under the text. */
+.plan--featured::before,
+.plan--featured::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  border-radius: inherit;
+  pointer-events: none;
+}
+.plan--featured::before {
+  background: linear-gradient(105deg, transparent 40%, rgba(0, 0, 0, 0.06) 45%, rgba(255, 255, 255, 0.95) 50%, rgba(0, 0, 0, 0.06) 55%, transparent 60%) 100% 0 / 250% 100% no-repeat;
+}
+.js .plan--featured.is-in::before { animation: card-glint 1.8s var(--ease-in-out) 0.6s both; }
+@keyframes card-glint {
+  from { background-position: 100% 0; }
+  to { background-position: 0% 0; }
+}
+.plan--featured::after {
+  background: radial-gradient(circle at var(--gx, 50%) var(--gy, 50%), rgba(255, 255, 255, 0.95), rgba(255, 255, 255, 0) 40%, rgba(0, 0, 0, 0.08) 85%);
+  opacity: 0;
+  transition: opacity 0.5s var(--ease);
+}
+@media (hover: hover) and (pointer: fine) {
+  .plan--featured:hover::after { opacity: 1; }
+}
 
 .plans__note { margin-top: 28px; color: var(--dim); font-size: 0.88rem; text-align: center; }
 
@@ -1484,6 +1550,37 @@ body::after {
 .form__actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 22px; }
 .form__actions .btn { flex: 1 1 200px; }
 .form__note { margin-top: 16px; color: var(--dim); font-size: 0.8rem; line-height: 1.55; }
+
+/* After sending, the form gives way to a short confirmation (main.js) */
+.form > * { transition: opacity 0.4s var(--ease), visibility 0.4s; }
+.form.is-done > :not(.form__done) { opacity: 0; visibility: hidden; }
+.form__done {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-content: center;
+  justify-items: center;
+  gap: 12px;
+  padding: clamp(22px, 4vw, 36px);
+  text-align: center;
+  outline: none;
+  animation: done-in 0.9s var(--ease) both;
+}
+.form__done[hidden] { display: none; }
+.form__done-star { width: 56px; height: 56px; margin-bottom: 12px; animation: done-star 1.4s var(--ease) both; }
+.form__done-star svg { width: 100%; height: 100%; overflow: visible; }
+.form__done-title { color: var(--muted); font-size: 0.9rem; }
+.form__done-head {
+  font-size: clamp(2rem, 1.6rem + 1.6vw, 2.8rem);
+  font-weight: 500;
+  line-height: 1.05;
+  letter-spacing: -0.04em;
+  text-wrap: balance;
+}
+.form__done-text { max-width: 340px; color: var(--muted); font-size: 0.95rem; text-wrap: balance; }
+.form__done .btn { margin-top: 12px; }
+@keyframes done-in { from { opacity: 0; transform: translateY(14px); filter: blur(6px); } }
+@keyframes done-star { from { opacity: 0; transform: rotate(-120deg) scale(0.4); } }
 
 @media (min-width: 560px) {
   .form__grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }

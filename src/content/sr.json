@@ -59,12 +59,12 @@
       {
         "title": "Logistika i teren",
         "text": "Terenski zadaci, nabavke, preuzimanja, isporuke i organizacija logistike.",
-        "ui": ["Preuzimanje", "Isporuka", "U toku", "Stiže u 14:20"]
+        "ui": ["Preuzimanje", "Isporuka", "U toku", "Stiže u {time}"]
       },
       {
         "title": "Lične obaveze",
         "text": "Privatne obaveze, rezervacije, zakazivanja i koordinacija svakodnevnih aktivnosti.",
-        "ui": ["Sto za dvoje", "20:30", "Potvrđeno", "Stomatolog · čet 09:00"]
+        "ui": ["Sto za dvoje", "20:30", "Potvrđeno", "Stomatolog · {date} · 09:00", "večeras", "sutra"]
       },
       {
         "title": "Istraživanje i izbor",
@@ -214,6 +214,12 @@
       "sendEmail": "Pošalji e-poštom",
       "note": "Forma otvara WhatsApp ili vaš program za e-poštu sa pripremljenom porukom. Ovaj sajt ne čuva nikakve podatke.",
       "required": "Unesite ime i kratku poruku."
+    },
+    "done": {
+      "title": "Poruka je spremna.",
+      "whatsapp": "Ostalo je samo da je pošaljete u WhatsApp-u.",
+      "email": "Ostalo je samo da je pošaljete iz programa za e-poštu.",
+      "back": "Izmeni poruku"
     },
     "msg": {
       "subject": "Upit sa sajta",

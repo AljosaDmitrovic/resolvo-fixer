@@ -109,22 +109,36 @@
     window.addEventListener('scroll', () => { if (window.scrollY < window.innerHeight * 1.2) kick(); }, { passive: true });
   }
 
-  /* Quote: words light up as it scrolls toward the middle of the screen */
-  const lit = $('[data-lit]');
-  if (lit && !reduceMotion.matches) {
-    let raf = 0, last = '';
+  /* Scroll-linked light: a 0–1 custom property that follows an element up the screen */
+  const scrollLinked = (el, prop, progress, onChange) => {
+    let raf = 0, last = -1;
     const update = () => {
       raf = 0;
-      const r = lit.getBoundingClientRect();
-      const vh = window.innerHeight;
-      const p = (vh * 0.9 - (r.top + r.height / 2)) / (vh * 0.4);
-      const value = Math.min(1, Math.max(0, p)).toFixed(3);
-      if (value !== last) lit.style.setProperty('--lit', (last = value));
+      const value = Math.round(Math.min(1, Math.max(0, progress(el.getBoundingClientRect(), window.innerHeight))) * 1000) / 1000;
+      if (value === last) return;
+      el.style.setProperty(prop, (last = value));
+      if (onChange) onChange(value);
     };
     const kick = () => { if (!raf) raf = requestAnimationFrame(update); };
     window.addEventListener('scroll', kick, { passive: true });
     window.addEventListener('resize', kick, { passive: true });
     update();
+  };
+
+  if (!reduceMotion.matches) {
+    /* Quote: words light up as it reaches the middle of the screen; the star glints on the last one */
+    const quote = $('[data-lit]');
+    if (quote) {
+      const figure = quote.closest('.quote__inner') || quote;
+      scrollLinked(quote, '--lit', (r, vh) => (vh * 0.9 - (r.top + r.height / 2)) / (vh * 0.4), (v) => {
+        if (v === 1) figure.classList.add('is-lit');
+        else if (v < 0.5) figure.classList.remove('is-lit'); // re-arm once the quote has dimmed again
+      });
+    }
+
+    /* Process: the line runs 01 → 04 and each number lights up as it is reached */
+    const steps = $('[data-steps]');
+    if (steps) scrollLinked(steps, '--p', (r, vh) => (vh * 0.85 - r.top) / (vh * 0.3 + r.height));
   }
 
   /* Freeze SVG (SMIL) animations for reduced motion */
@@ -141,6 +155,29 @@
         el.style.setProperty('--my', `${e.clientY - r.top}px`);
       });
     });
+  }
+
+  /* Featured plan: tilts toward the pointer like a metal card, with a glare that follows it */
+  const metal = $('.plan--featured');
+  if (metal && finePointer.matches && !reduceMotion.matches) {
+    let tx = 0, ty = 0, cx = 0, cy = 0, raf = 0;
+    const render = () => {
+      cx += (tx - cx) * 0.12;
+      cy += (ty - cy) * 0.12;
+      const angle = Math.min(1, Math.hypot(cx, cy)) * 7; // up to 7°
+      metal.style.rotate = angle > 0.02 ? `${(-cy).toFixed(3)} ${cx.toFixed(3)} 0 ${angle.toFixed(2)}deg` : '';
+      metal.style.setProperty('--gx', `${(50 + cx * 50).toFixed(1)}%`);
+      metal.style.setProperty('--gy', `${(50 + cy * 50).toFixed(1)}%`);
+      raf = Math.abs(tx - cx) + Math.abs(ty - cy) > 0.002 ? requestAnimationFrame(render) : 0;
+    };
+    const kick = () => { if (!raf) raf = requestAnimationFrame(render); };
+    metal.addEventListener('pointermove', (e) => {
+      const r = metal.getBoundingClientRect();
+      tx = ((e.clientX - r.left) / r.width) * 2 - 1;
+      ty = ((e.clientY - r.top) / r.height) * 2 - 1;
+      kick();
+    });
+    metal.addEventListener('pointerleave', () => { tx = 0; ty = 0; kick(); });
   }
 
   /* FAQ: one open at a time, with height animation */
@@ -186,20 +223,41 @@
     a.addEventListener('click', () => { if (planSelect) planSelect.value = a.dataset.plan; });
   });
 
-  /* Contact: current time in Novi Sad, with a greeting to match */
+  /* Novi Sad time: the greeting and clock in contact, and the times in the service scenes */
   const live = $('[data-live]');
-  if (live) {
-    const clock = new Intl.DateTimeFormat('en-GB', { timeZone: 'Europe/Belgrade', hour: '2-digit', minute: '2-digit', hourCycle: 'h23' });
-    const hello = $('[data-live-hello]', live);
-    const time = $('[data-live-time]', live);
+  const eta = $('[data-eta]');
+  const day = $('[data-day]');
+  const thursday = $('[data-thursday]');
+  if (live || eta || day || thursday) {
+    const zone = 'Europe/Belgrade';
+    const clock = new Intl.DateTimeFormat('en-GB', { timeZone: zone, hour: '2-digit', minute: '2-digit', hourCycle: 'h23' });
+    const today = new Intl.DateTimeFormat('en-GB', { timeZone: zone, year: 'numeric', month: 'numeric', day: 'numeric' });
+    const dayName = new Intl.DateTimeFormat(doc.lang === 'en' ? 'en-GB' : doc.lang, { timeZone: 'UTC', weekday: 'short', day: 'numeric', month: 'short' });
     let timer = 0;
     const tick = () => {
       clearTimeout(timer);
-      const now = clock.format(new Date());
-      const h = Number(now.slice(0, 2));
-      time.textContent = now;
-      hello.textContent = live.dataset[h >= 5 && h < 12 ? 'morning' : h >= 12 && h < 18 ? 'day' : 'evening'];
-      live.hidden = false;
+      const now = Date.now();
+      const hm = clock.format(now);
+      if (live) {
+        const h = Number(hm.slice(0, 2));
+        $('[data-live-time]', live).textContent = hm;
+        $('[data-live-hello]', live).textContent = live.dataset[h >= 5 && h < 12 ? 'morning' : h >= 12 && h < 18 ? 'day' : 'evening'];
+        live.hidden = false;
+      }
+      // Delivery lands 15–20 minutes from now, on a five-minute mark
+      if (eta) eta.textContent = clock.format(Math.ceil((now + 15 * 60000) / 300000) * 300000);
+      // The table is tonight until its time has passed, then tomorrow
+      if (day) {
+        day.textContent = hm < day.dataset.at ? day.dataset.today : day.dataset.tomorrow;
+        day.hidden = false;
+      }
+      // The dentist is next Thursday
+      if (thursday) {
+        const d = Object.fromEntries(today.formatToParts(now).map(({ type, value }) => [type, value]));
+        const noon = Date.UTC(d.year, d.month - 1, d.day, 12);
+        const ahead = (4 - new Date(noon).getUTCDay() + 7) % 7 || 7;
+        thursday.textContent = dayName.format(noon + ahead * 864e5).replace(',', '');
+      }
       timer = setTimeout(tick, 60000 - (Date.now() % 60000) + 50); // next minute
     };
     tick();
@@ -212,6 +270,21 @@
   if (form && i18nEl) {
     const i18n = JSON.parse(i18nEl.textContent);
     const error = $('.form__error', form);
+    const done = $('[data-done]', form);
+    const showDone = (via) => {
+      if (!done) return;
+      $('[data-done-text]', done).textContent = done.dataset[via];
+      done.hidden = false;
+      form.classList.add('is-done');
+      done.focus({ preventScroll: true });
+    };
+    if (done) {
+      $('[data-done-back]', done).addEventListener('click', () => {
+        form.classList.remove('is-done');
+        done.hidden = true;
+        form.elements.message.focus();
+      });
+    }
     form.addEventListener('submit', (e) => {
       e.preventDefault();
       const via = (e.submitter && e.submitter.value) || 'whatsapp';
@@ -241,6 +314,7 @@
       } else {
         window.open(`https://wa.me/${i18n.whatsapp}?text=${encodeURIComponent(text)}`, '_blank', 'noopener');
       }
+      showDone(via);
     });
     ['name', 'message'].forEach((n) => {
       form.elements[n].addEventListener('input', () => form.elements[n].removeAttribute('aria-invalid'));

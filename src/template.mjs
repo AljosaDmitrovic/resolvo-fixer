@@ -116,7 +116,10 @@ const navItems = (t) =>
 
 /* ---------- Service visuals ---------- */
 
-const serviceVisual = (i, ui) => {
+// Short name for Thursday in the page language ("čet", "Thu", "чт"); 1 Jan 2026 is a Thursday.
+const thursdayName = (lang) => new Intl.DateTimeFormat(lang, { weekday: 'short', timeZone: 'UTC' }).format(Date.UTC(2026, 0, 1));
+
+const serviceVisual = (i, ui, lang) => {
   switch (i) {
     case 0:
       return `
@@ -137,17 +140,17 @@ const serviceVisual = (i, ui) => {
             </svg>
             <span class="route__label route__label--a">${ui[0]}</span>
             <span class="route__label route__label--b">${ui[1]}</span>
-            <div class="chip chip--status"><span class="pulse"></span><span>${ui[2]}</span><span class="chip__meta">${ui[3]}</span></div>
+            <div class="chip chip--status"><span class="pulse"></span><span>${ui[2]}</span><span class="chip__meta">${ui[3].replace('{time}', '<time data-eta>14:20</time>')}</span></div>
           </div>`;
     case 2:
       return `
           <div class="vis vis--ticket">
             <div class="ticket">
-              <div class="ticket__row"><span class="ticket__label">${ui[0]}</span><span class="ticket__time">${ui[1]}</span></div>
+              <div class="ticket__row"><span class="ticket__label">${ui[0]}</span><span class="ticket__time"><span class="ticket__day" data-day data-at="${ui[1]}" data-today="${attr(ui[4])}" data-tomorrow="${attr(ui[5])}" hidden></span>${ui[1]}</span></div>
               <div class="ticket__rule"></div>
               <div class="ticket__status"><span class="chip__check">${I.check}</span>${ui[2]}</div>
             </div>
-            <div class="chip chip--small chip--muted">${I.calendar}<span>${ui[3]}</span></div>
+            <div class="chip chip--small chip--muted">${I.calendar}<span>${ui[3].replace('{date}', `<span data-thursday>${thursdayName(lang)}</span>`)}</span></div>
           </div>`;
     case 3:
       return `
@@ -346,7 +349,7 @@ ${langs.filter((l) => l.lang !== t.lang).map((l) => `  <meta property="og:locale
             .map(
               (s, i) => `
           <article class="card card--svc spot" data-reveal style="--d:${(i % 2) * 120}">
-            <div class="card__visual">${serviceVisual(i, s.ui)}
+            <div class="card__visual">${serviceVisual(i, s.ui, t.htmlLang)}
             </div>
             <div class="card__body">
               <h3 class="card__title"><span class="card__icon">${serviceIcons[i]}</span>${s.title}</h3>
@@ -403,10 +406,10 @@ ${langs.filter((l) => l.lang !== t.lang).map((l) => `  <meta property="og:locale
     <section class="section" id="process">
       <div class="container">
         ${sectionHead(t.process)}
-        <ol class="steps">
+        <ol class="steps" data-steps style="--n:${t.process.steps.length}">
           ${t.process.steps
             .map(
-              (s, i) => `<li class="step" data-reveal style="--d:${i * 110}">
+              (s, i) => `<li class="step" data-reveal style="--d:${i * 110};--i:${i}">
             <div class="step__top"><span class="step__num">${pad(i + 1)}</span><span class="step__line"></span></div>
             <h3>${s.title}</h3>
             <p>${s.text}</p>
@@ -554,6 +557,13 @@ ${langs.filter((l) => l.lang !== t.lang).map((l) => `  <meta property="og:locale
             <button class="btn btn--dark" type="submit" name="via" value="email">${I.mail}${t.contact.form.sendEmail}</button>
           </div>
           <p class="form__note">${t.contact.form.note}</p>
+          <div class="form__done" data-done data-whatsapp="${attr(t.contact.done.whatsapp)}" data-email="${attr(t.contact.done.email)}" tabindex="-1" hidden>
+            <div class="form__done-star" aria-hidden="true">${chromeStar(9)}</div>
+            <p class="form__done-title">${t.contact.done.title}</p>
+            <p class="form__done-head text-grad">${t.hero.title}</p>
+            <p class="form__done-text" data-done-text></p>
+            <button class="btn btn--dark btn--sm" type="button" data-done-back>${t.contact.done.back}</button>
+          </div>
         </form>
       </div>
       <script type="application/json" id="form-i18n">${json({ ...t.contact.msg, email: site.email, whatsapp: site.whatsapp })}</script>

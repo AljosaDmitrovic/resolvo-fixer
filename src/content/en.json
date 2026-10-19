@@ -59,12 +59,12 @@
       {
         "title": "Logistics & Errands",
         "text": "Field tasks, purchasing, pickups, deliveries and end-to-end logistics coordination.",
-        "ui": ["Pickup", "Delivery", "On the way", "ETA 14:20"]
+        "ui": ["Pickup", "Delivery", "On the way", "ETA {time}"]
       },
       {
         "title": "Personal & Lifestyle",
         "text": "Private obligations, reservations, appointments and coordination of everyday activities.",
-        "ui": ["Table for two", "20:30", "Confirmed", "Dentist · Thu 09:00"]
+        "ui": ["Table for two", "20:30", "Confirmed", "Dentist · {date} · 09:00", "tonight", "tomorrow"]
       },
       {
         "title": "Research & Sourcing",
@@ -214,6 +214,12 @@
       "sendEmail": "Send via email",
       "note": "The form opens WhatsApp or your email app with your message ready to send. Nothing is stored on this website.",
       "required": "Please enter your name and a short message."
+    },
+    "done": {
+      "title": "Your message is ready.",
+      "whatsapp": "All that’s left is to hit send in WhatsApp.",
+      "email": "All that’s left is to hit send in your email app.",
+      "back": "Edit message"
     },
     "msg": {
       "subject": "Enquiry from the website",

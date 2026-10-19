@@ -30,9 +30,9 @@
   <link rel="manifest" href="../site.webmanifest">
   <link rel="preload" href="../assets/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="../assets/fonts/noto-serif-display-italic-latin.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="../assets/css/style.css?v=61505fd2">
+  <link rel="stylesheet" href="../assets/css/style.css?v=b2405976">
   <script>document.documentElement.classList.add('js')</script>
-  <script src="../assets/js/main.js?v=db8c814c" defer></script>
+  <script src="../assets/js/main.js?v=25bad188" defer></script>
   <script type="application/ld+json">[{"@context":"https://schema.org","@type":"ProfessionalService","@id":"https://resolvosolutions.com/#business","name":"Resolvo","legalName":"NIKOLA RAJIĆ PREDUZETNIK USLUGE PODRŠKE POSLOVANJU RESOLVO BUSINESS & PERSONAL FIXER NOVI SAD","description":"Dedicated personal and business support in Novi Sad. Resolvo handles tasks, coordinates solutions and solves everyday challenges so you can focus on what matters most.","url":"https://resolvosolutions.com/en/","image":"https://resolvosolutions.com/assets/img/og-en.png","logo":"https://resolvosolutions.com/assets/img/icon-512.png","telephone":"+381603255353","email":"fixer@resolvosolutions.com","taxID":"116019187","founder":{"@type":"Person","name":"Nikola Rajić"},"address":{"@type":"PostalAddress","streetAddress":"Veselina Masleše 40","addressLocality":"Novi Sad","postalCode":"21000","addressCountry":"RS"},"areaServed":[{"@type":"City","name":"Novi Sad"},{"@type":"AdministrativeArea","name":"Vojvodina"},{"@type":"City","name":"Belgrade"}],"knowsLanguage":["sr","en","ru"],"paymentAccepted":"Cash, bank transfer","priceRange":"€€€","makesOffer":[{"@type":"Offer","name":"Resolvo Priority","description":"Dedicated support throughout the day.","priceSpecification":{"@type":"UnitPriceSpecification","price":790,"priceCurrency":"EUR","unitText":"MONTH"}},{"@type":"Offer","name":"Resolvo Signature","description":"On retainer, day and night.","priceSpecification":{"@type":"UnitPriceSpecification","price":1590,"priceCurrency":"EUR","unitText":"MONTH"}},{"@type":"Offer","name":"Resolvo Bespoke","description":"Shaped entirely around you."}]},{"@context":"https://schema.org","@type":"FAQPage","inLanguage":"en","mainEntity":[{"@type":"Question","name":"What exactly can Resolvo help me with?","acceptedAnswer":{"@type":"Answer","text":"Resolvo handles a wide range of personal and business responsibilities, including organising appointments, coordinating logistics, managing errands, researching solutions, communicating with service providers, and overseeing everyday tasks or special projects. If something requires your time, attention or coordination, there’s a good chance we can take care of it."}},{"@type":"Question","name":"How does your service work, and how much does it cost?","acceptedAnswer":{"@type":"Answer","text":"We begin by understanding your needs, priorities and expectations. Based on these, we recommend a personalised service package that provides the appropriate level of support. Our services are primarily designed around ongoing partnerships, with transparent pricing and a clearly defined scope of responsibilities. Plans start at €790 per month."}},{"@type":"Question","name":"Why should I trust Resolvo with my personal or business responsibilities?","acceptedAnswer":{"@type":"Answer","text":"Trust, discretion and accountability are at the core of Resolvo. We deliberately work with a limited number of clients to ensure dedicated attention, direct communication and consistent service quality. Our goal isn’t simply to complete individual tasks, but to become a dependable partner you can confidently delegate responsibilities to."}},{"@type":"Question","name":"Do you take urgent or after-hours requests?","acceptedAnswer":{"@type":"Answer","text":"Yes. With Resolvo Signature we are on retainer 24/7, and urgent requests are always taken seriously."}},{"@type":"Question","name":"Which area do you cover?","acceptedAnswer":{"@type":"Answer","text":"Primarily Novi Sad. By arrangement, service extends to the rest of Vojvodina and to Belgrade."}},{"@type":"Question","name":"What if what I need isn’t on your list?","acceptedAnswer":{"@type":"Answer","text":"Ask anyway. If we don’t do it ourselves, we know someone who does — or someone who knows someone."}},{"@type":"Question","name":"How do I pay?","acceptedAnswer":{"@type":"Answer","text":"Monthly, by bank transfer or in cash."}}]}]</script>
 </head>
 <body>
@@ -176,7 +176,7 @@
             </svg>
             <span class="route__label route__label--a">Pickup</span>
             <span class="route__label route__label--b">Delivery</span>
-            <div class="chip chip--status"><span class="pulse"></span><span>On the way</span><span class="chip__meta">ETA 14:20</span></div>
+            <div class="chip chip--status"><span class="pulse"></span><span>On the way</span><span class="chip__meta">ETA <time data-eta>14:20</time></span></div>
           </div>
             </div>
             <div class="card__body">
@@ -188,11 +188,11 @@
             <div class="card__visual">
           <div class="vis vis--ticket">
             <div class="ticket">
-              <div class="ticket__row"><span class="ticket__label">Table for two</span><span class="ticket__time">20:30</span></div>
+              <div class="ticket__row"><span class="ticket__label">Table for two</span><span class="ticket__time"><span class="ticket__day" data-day data-at="20:30" data-today="tonight" data-tomorrow="tomorrow" hidden></span>20:30</span></div>
               <div class="ticket__rule"></div>
               <div class="ticket__status"><span class="chip__check"><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg></span>Confirmed</div>
             </div>
-            <div class="chip chip--small chip--muted"><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="3" y="4.5" width="18" height="16" rx="2"/><path d="M8 3v3M16 3v3M3 10h18"/></svg><span>Dentist · Thu 09:00</span></div>
+            <div class="chip chip--small chip--muted"><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="3" y="4.5" width="18" height="16" rx="2"/><path d="M8 3v3M16 3v3M3 10h18"/></svg><span>Dentist · <span data-thursday>Thu</span> · 09:00</span></div>
           </div>
             </div>
             <div class="card__body">
@@ -299,23 +299,23 @@
         <h2 class="h2 text-grad">From first conversation to <em>peace of mind.</em></h2>
         
       </header>
-        <ol class="steps">
-          <li class="step" data-reveal style="--d:0">
+        <ol class="steps" data-steps style="--n:4">
+          <li class="step" data-reveal style="--d:0;--i:0">
             <div class="step__top"><span class="step__num">01</span><span class="step__line"></span></div>
             <h3>Get in touch</h3>
             <p>Call, message or write — whichever suits you. We respond as soon as possible.</p>
           </li>
-          <li class="step" data-reveal style="--d:110">
+          <li class="step" data-reveal style="--d:110;--i:1">
             <div class="step__top"><span class="step__num">02</span><span class="step__line"></span></div>
             <h3>We listen</h3>
             <p>We begin by understanding your needs, priorities and expectations.</p>
           </li>
-          <li class="step" data-reveal style="--d:220">
+          <li class="step" data-reveal style="--d:220;--i:2">
             <div class="step__top"><span class="step__num">03</span><span class="step__line"></span></div>
             <h3>Your plan</h3>
             <p>We recommend a personalised package with transparent pricing and a clearly defined scope of responsibilities.</p>
           </li>
-          <li class="step" data-reveal style="--d:330">
+          <li class="step" data-reveal style="--d:330;--i:3">
             <div class="step__top"><span class="step__num">04</span><span class="step__line"></span></div>
             <h3>You delegate</h3>
             <p>From then on you hand over responsibility, not just tasks — to a single trusted point of contact.</p>
@@ -525,6 +525,13 @@
             <button class="btn btn--dark" type="submit" name="via" value="email"><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>Send via email</button>
           </div>
           <p class="form__note">The form opens WhatsApp or your email app with your message ready to send. Nothing is stored on this website.</p>
+          <div class="form__done" data-done data-whatsapp="All that’s left is to hit send in WhatsApp." data-email="All that’s left is to hit send in your email app." tabindex="-1" hidden>
+            <div class="form__done-star" aria-hidden="true"><svg viewBox="0 0 200 200" aria-hidden="true" focusable="false"><use href="#star-path" fill="url(#g-core)"/><g filter="url(#f-bevel)"><use href="#star-path" fill="none" stroke="url(#g-chrome)" stroke-width="9" stroke-linejoin="round"/></g></svg></div>
+            <p class="form__done-title">Your message is ready.</p>
+            <p class="form__done-head text-grad">Consider it <em>resolved.</em></p>
+            <p class="form__done-text" data-done-text></p>
+            <button class="btn btn--dark btn--sm" type="button" data-done-back>Edit message</button>
+          </div>
         </form>
       </div>
       <script type="application/json" id="form-i18n">{"subject":"Enquiry from the website","greeting":"Hello, my name is","interest":"Interested in","contact":"Contact","email":"fixer@resolvosolutions.com","whatsapp":"381603255353"}</script>
