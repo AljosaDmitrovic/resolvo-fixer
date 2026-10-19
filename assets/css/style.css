@@ -471,8 +471,8 @@ body::after {
   isolation: isolate;
   display: flex;
   align-items: center;
-  min-height: min(100svh, 980px);
-  padding: calc(var(--header-h) + 64px) 0 72px;
+  min-height: min(88svh, 860px);
+  padding: calc(var(--header-h) + 64px) 0 32px;
   overflow: hidden;
 }
 .hero__bg { position: absolute; inset: 0; z-index: -1; pointer-events: none; }
@@ -630,7 +630,7 @@ body::after {
 
 .section {
   position: relative;
-  padding-block: clamp(80px, 9vw, 136px);
+  padding-block: clamp(48px, 5vw, 80px);
 }
 .section--tight { padding-top: 0; }
 .section__head { max-width: 760px; margin-bottom: clamp(40px, 6vw, 64px); }
@@ -1680,9 +1680,6 @@ body::after {
 .mbar .btn { flex: 1; --h: 46px; }
 @media (min-width: 720px) {
   .mbar { display: none; }
-}
-@media (max-width: 719px) {
-  .footer { padding-bottom: 80px; }
 }
 
 /* ---------- Reduced motion ---------- */
